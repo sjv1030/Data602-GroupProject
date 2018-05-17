@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<div class=page>
+    <head>
+        <meta charset="utf-8">
+        <title>Choose a Future to Analyze</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"/>
+    </head>
+<body>
+	<h2>Choose a Future to Analyze</h2>
+		<form action = "{{url_for('get_future_name')}}" method = "POST">
+	    	<select name = "future">
+		    <option value="Oil">oil</option>
+		    <option value="Natural Gas">natural_gas</option>
+	    	</select>
+	    	<input type = "submit">
+	    </form>
+	{% for table in tables %}
+    	{{ table|safe }}
+	{% endfor %}
+</body>
+</div>
+</html>
